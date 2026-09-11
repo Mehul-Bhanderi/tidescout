@@ -1,73 +1,61 @@
-# TideScout
+# Tide Data Application
 
-TideScout is an advanced tide tracking and activity recommendation application built with React, TypeScript, and Vite. It provides real-time tide information, professional analytics, and smart recommendations for outdoor activities based on your current location.
-
-## Features
-
-- 🌊 **Live Tide Data**: Fetches real-time tide data for your current location using the WorldTides API.
-- 📈 **Professional Tide Analytics**: Visualizes 7-day tide trends with interactive charts and key insights.
-- 🏄 **Smart Activity Recommendations**: Suggests the best times for activities like fishing, surfing, and beachcombing.
-- 📍 **Location Awareness**: Uses browser geolocation to personalize tide data.
-- ⚡ **Modern UI**: Responsive, mobile-friendly interface styled with Tailwind CSS.
-
-## Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-### Installation
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/yourusername/tidescout.git
-   cd tidescout
-   ```
-
-2. **Install dependencies:**
-   ```sh
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start the development server:**
-   ```sh
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser and visit:**
-   ```
-   http://localhost:5173
-   ```
+This project is a React application that fetches and displays tide data using the World Tides API. It provides various components to visualize tide information, including charts and insights based on the data.
 
 ## Project Structure
 
-- `src/`
-  - `components/` – UI components (charts, info panels, recommendations, etc.)
-  - `hooks/` – Custom React hooks for location and tide data fetching
-  - `utils/` – Utility functions for time formatting and recommendations
-  - `types/` – TypeScript type definitions
+- **src/**: Contains the main application code.
+  - **App.tsx**: Main application component that sets up routing.
+  - **index.css**: Global styles for the application.
+  - **main.tsx**: Entry point for the React application.
+  - **vite-env.d.ts**: TypeScript definitions for Vite environment variables.
+  - **components/**: Contains reusable components.
+    - **ActivityRecommendations.tsx**: Displays activity recommendations based on tide data.
+    - **Header.tsx**: Header component for the application.
+    - **LoadingSpinner.tsx**: Loading spinner component for loading states.
+    - **LocationStatus.tsx**: Displays the current status of the selected location.
+    - **TideChart.tsx**: Visualizes tide heights in a chart format.
+    - **TideInfo.tsx**: Displays detailed tide information.
+    - **TideInsights.tsx**: Provides insights based on tide data.
+  - **hooks/**: Contains custom hooks.
+    - **useLocation.ts**: Manages location state.
+    - **useTideData.ts**: Fetches and processes tide data using an API key.
+  - **routes/**: Contains API routes.
+    - **api.ts**: Allows updating the API key used in the `useTideData` hook.
+  - **types/**: Contains TypeScript types and interfaces.
+    - **index.ts**: Type definitions used throughout the application.
+  - **utils/**: Contains utility functions.
+    - **activityRecommendations.ts**: Functions for generating activity recommendations.
+    - **timeUtils.ts**: Functions for handling time-related operations.
 
-## Configuration
+## Installation
 
-- The app uses the [WorldTides API](https://www.worldtides.info/). The API key is set in [`src/hooks/useTideData.ts`](src/hooks/useTideData.ts).
-- Tailwind CSS is configured in [`tailwind.config.js`](tailwind.config.js).
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```
+   cd tide-data-app
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-## Scripts
+## Usage
 
-- `npm run dev` – Start the development server
-- `npm run build` – Build for production
-- `npm run preview` – Preview the production build
-- `npm run lint` – Run ESLint
+To start the application, run:
+```
+npm run dev
+```
+
+Visit `http://localhost:3000` in your browser to view the application.
+
+## API Key Configuration
+
+You can set the API key used in the application by making a request to the `/api` route. This allows you to update the API key dynamically without modifying the source code directly.
 
 ## License
 
-MIT
-
----
-
-**Built with ❤️ for ocean lovers. Powered by
+This project is licensed under the MIT License.

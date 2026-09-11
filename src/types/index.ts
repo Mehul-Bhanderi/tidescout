@@ -1,34 +1,27 @@
-export interface Location {
+export type Location = {
   latitude: number;
   longitude: number;
-  timestamp: number;
-}
+};
 
-export interface TidePoint {
+export type TideExtreme = {
   dt: number;
   date: string;
   height: number;
-  type: 'High' | 'Low';
-}
+  type: 'high' | 'low';
+};
 
-export interface TideData {
+export type TideHeight = {
+  dt: number;
+  date: string;
+  height: number;
+};
+
+export type TideData = {
   station: {
     name: string;
     lat: number;
     lon: number;
   };
-  extremes: TidePoint[];
-  heights: Array<{
-    dt: number;
-    date: string;
-    height: number;
-  }>;
-}
-
-export interface ActivityRecommendation {
-  activity: string;
-  icon: string;
-  recommendation: string;
-  bestTime: string;
-  confidence: 'high' | 'medium' | 'low';
-}
+  extremes: TideExtreme[];
+  heights: TideHeight[];
+};
